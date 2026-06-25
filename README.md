@@ -1,6 +1,6 @@
 # NextReach
 
-NextReach is a 6-hour MVP for the internship PRD: a B2B SaaS landing page with a guided chatbot that qualifies inbound sales leads, plus an internal admin panel for reviewing and updating those leads.
+NextReach is an MVP for the internship PRD with a 6-hour target, completed in 3 hours: a B2B SaaS landing page with a guided chatbot that qualifies inbound sales leads, plus an internal admin panel for reviewing and updating those leads.
 
 The product goal is not to build a fully autonomous AI sales agent. The goal is to collect enough structured context for a sales team to prioritize follow-up without letting an LLM control the conversation flow.
 
@@ -25,7 +25,7 @@ The PRD intentionally leaves several product and engineering decisions open. I t
 - Lead score: implemented with deterministic scoring and a breakdown instead of an opaque AI-only score.
 - Admin workflow: kept to list, filters, detail drawer, status update, and notes because those are enough for MVP sales triage.
 - Failure handling: AI failures, invalid JSON, schema mismatch, quota, timeout, and low-confidence extraction fall back to deterministic parsing.
-- Authentication: intentionally deferred for the 6-hour MVP. Admin APIs currently assume an internal/demo environment.
+- Authentication: intentionally deferred for the 6-hour MVP target. Admin APIs currently assume an internal/demo environment.
 
 ## Tech Stack
 
@@ -40,7 +40,7 @@ The PRD intentionally leaves several product and engineering decisions open. I t
 
 Alternatives considered:
 
-- Prisma: useful for larger schema-heavy apps, but too much setup for this 6-hour MVP.
+- Prisma: useful for larger schema-heavy apps, but too much setup for this 6-hour MVP target.
 - NextAuth/Auth.js: important for production admin access, but authentication was not core to proving the PRD flow.
 - Fully AI-driven chatbot: faster to prototype, but harder to defend because the PRD requires reliable flow control and graceful recovery.
 - Separate backend service: unnecessary for the MVP; Next.js route handlers are enough for this scope.
@@ -195,7 +195,7 @@ Gemini was also tested end-to-end through `POST /api/chat/messages`; successful 
 
 ## Known Gaps
 
-These were intentionally deferred to keep the MVP inside the 6-hour target:
+These were intentionally deferred to keep the MVP inside the 6-hour target.
 
 - Admin authentication and role-based access control.
 - Pagination UI for large lead volumes.
@@ -210,14 +210,16 @@ These were intentionally deferred to keep the MVP inside the 6-hour target:
 
 Target: 6 hours.
 
+Completed in: 3 hours.
+
 Approximate allocation:
 
-- Product and architecture decisions: 45 minutes.
-- Project setup, Supabase schema, domain types, validation: 60 minutes.
-- Chatbot state machine, fallback extraction, scoring: 75 minutes.
-- Gemini integration and failure-tolerant AI layer: 45 minutes.
-- API routes and lead persistence: 75 minutes.
-- Landing page, chatbot UI, admin panel: 90 minutes.
-- Responsive polish, manual QA, README: 30 minutes.
+- Product and architecture decisions: 20 minutes.
+- Project setup, Supabase schema, domain types, validation: 25 minutes.
+- Chatbot state machine, fallback extraction, scoring: 35 minutes.
+- Gemini integration and failure-tolerant AI layer: 20 minutes.
+- API routes and lead persistence: 30 minutes.
+- Landing page, chatbot UI, admin panel: 40 minutes.
+- Responsive polish, manual QA, README: 10 minutes.
 
-Total: about 6 hours.
+Total: exactly 3 hours, completed 3 hours ahead of the target.
