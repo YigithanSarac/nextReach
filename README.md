@@ -140,6 +140,17 @@ http://localhost:3000
 http://localhost:3000/admin
 ```
 
+## Demo URLs
+
+After deployment, use:
+
+```txt
+https://your-vercel-domain.vercel.app
+https://your-vercel-domain.vercel.app/admin
+```
+
+The public landing page is at `/`. The internal lead review panel is at `/admin`.
+
 Build and lint:
 
 ```bash
